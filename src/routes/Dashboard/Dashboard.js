@@ -1,11 +1,11 @@
 // Dashboard.js
 import { useState } from 'react';
-import Users from "./comps/Users/Users";
-import Roles from "./comps/Roles/Roles";
-import Agencies from "./comps/Agencies/Agencies";
-import Projects from "./comps/Projects/Projects";
-import Global_Plan from "./comps/Global_Plan/Global_Plan";
-import Reports from "./comps/Reports/Reports";
+import Users from "./routes/Users/Users";
+import Roles from "./routes/Roles/Roles";
+import Agencies from "./routes/Agencies/Agencies";
+import Projects from "./routes/Projects/Projects";
+import Global_Plan from "./routes/Global_Plan/Global_Plan";
+import Reports from "./routes/Reports/Reports";
 import "./Dashboard.css";
 
 // init side menu routes

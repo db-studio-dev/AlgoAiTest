@@ -12,7 +12,7 @@ const Header = ()=>{
     // comps
     const Title = ()=>{
         return(
-            <div className="font-30">
+            <div className="font-30 link" onClick={()=>{navigate("/")}}>
                 AlgoAI Test Page
             </div>
         )

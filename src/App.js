@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Route, Routes, Navigate, useNavigate } from 'react-router-dom';
-import Header from "comps/Header/Header";
-import Dashboard from "comps/Dashboard/Dashboard";
-import Profile from "comps/Profile/Profile";
-import Billing from "comps/Billing/Billing";
-import History from "comps/History/History";
-import Stuff from "comps/Stuff/Stuff";
+import Header from "routes/Header/Header";
+import Dashboard from "routes/Dashboard/Dashboard";
+import Profile from "routes/Profile/Profile";
+import Billing from "routes/Billing/Billing";
+import History from "routes/History/History";
+import Stuff from "routes/Stuff/Stuff";
 
 const App = ()=>{
     return(
