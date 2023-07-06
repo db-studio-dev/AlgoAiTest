@@ -12,6 +12,9 @@
 .side-menu-item:hover{
     background-color:#171623;
 }
+.side-menu-item-selected{
+    background-color:#171623;
+}
 .dashboard-content{
     background-color: rgb(201, 207, 215);
     height: calc(100vh - 100px);
