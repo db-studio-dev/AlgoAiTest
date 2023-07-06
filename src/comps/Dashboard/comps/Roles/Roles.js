@@ -38,10 +38,11 @@ const Roles = ()=>{
             const List = ()=>{
                 const Item = ({label})=>{
                     const handleClick = ()=>{
-                        setCurrentRole(label)
+                        setCurrentRole(label);
+                        setShowList(false);
                     }
                     return(
-                        <div className='font-20 link' onClick={handleClick}>
+                        <div className={'font-20 link roles-list-item margin-5 padding-5 b-r-5 '+((label==currentRole)?"roles-list-item-selected":"")} onClick={handleClick}>
                             {label.split("_").join(" ")}
                         </div>
                     )
@@ -106,12 +107,28 @@ const Roles = ()=>{
             }
             const PermissionsList = ()=>{
                 const Permission = ({label})=>{
+                    const Slider = ()=>{
+                        const [on, setOn] = useState(false);
+                        const handleClick = ()=>{
+                            setOn(!on)
+                        }
+                        return(
+                            <div className='relative slider flex-col-center link' onClick={handleClick} style={{
+                                backgroundColor: on?"green":"grey"
+                            }}>
+                                <div className='slider-ball' style={{
+                                    left:on?"auto":"8px",
+                                    right:on?"8px":"auto",
+                                }}/>
+                            </div>
+                        )
+                    }
                     return(
-                        <div className='flex-row space-between padding-10' style={{border:"solid 1px grey"}}>
+                        <div className='flex-row permission align-center space-between padding-10' style={{border:"solid 1px grey"}}>
                             <div className='font-15'>
                                 {label}
                             </div>
-                            
+                            <Slider/>
                         </div>
                     )
                 }

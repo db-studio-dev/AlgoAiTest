@@ -37,6 +37,9 @@
     margin: 100px;
 }
 /* border radius */
+.b-r-5{
+    border-radius: 5px;
+}
 .b-r-20{
     border-radius: 20px;
 }

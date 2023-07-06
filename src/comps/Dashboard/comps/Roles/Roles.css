@@ -10,6 +10,18 @@
     border-radius: 5px;
     background-color: white;
 }
+.roles-list-item:hover{
+    background-color: grey;
+    color: white;
+}
+.roles-list-item-selected{
+    background-color: rgb(247, 164, 68);
+    color: white;
+}
+.roles-list-item-selected:hover{
+    background-color: rgb(247, 164, 68);
+    color: white;
+}
 .permissions-groups{
     width: 20%;
 }
@@ -33,8 +45,24 @@
 }
 .permissions{
     width: 80%;
+}
+.permission{
     background-color: white;
 }
 .permissions-title{
     background-color: #29283a;
+}
+.slider{
+    width: 60px;
+    height: 30px;
+    border-radius: 20px;
+    border: solid 1px grey;
+}
+.slider-ball{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    border: solid 1px grey;
+    background-color: white;
 }
