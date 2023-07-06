@@ -24,6 +24,13 @@
     color: #fff;
     border-radius: 5px;
 }
+.permissions-group-selected{
+    padding: 5px 10px;
+    background-color: rgb(255, 146, 73);
+    color: #fff;
+    border-radius: 5px;
+    cursor: default;
+}
 .permissions{
     height: 300px;
     width: 80%;

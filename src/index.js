@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from 'comps/App/App';
-import 'css/main.css';
-import 'css/borders.css';
-import 'css/dimensions.css';
-import 'css/flex.css';
-import 'css/positions.css';
-import 'css/special.css';
-import 'css/text.css';
+import 'assets/css/main.css';
+import 'assets/css/borders.css';
+import 'assets/css/dimensions.css';
+import 'assets/css/flex.css';
+import 'assets/css/positions.css';
+import 'assets/css/special.css';
+import 'assets/css/text.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App />);

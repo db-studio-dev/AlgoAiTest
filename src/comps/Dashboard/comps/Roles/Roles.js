@@ -1,10 +1,99 @@
 // Roles.js
-import { useState } from 'react';
+
+// imports
+import { useState, useEffect } from 'react';
 import dropIcon from "assets/images/general/dropIcon.png";
 import "./Roles.css";
 
+// General Init
+const permissions = {
+    Super_Admin:{
+        All:[
+            "Access and permission to all the system"
+        ]
+    },
+    Administrator:{
+        User_Management: [
+            "Creating and managing user accounts",
+            "Invite users",
+            "Granting user access",
+            "Delete users",
+            "Disable users",
+            "Assigning roles and permissions"
+        ],
+        Content_Management: [
+            "Creating and editing",
+            "Uploading and optimizing images or videos",
+            "Organizing and categorizing content",
+            "Archiving or deleting outdated content",
+            "Publishing",
+            "Translation",
+            "SEO Optimization"
+        ],
+        Notifications: [
+            "Send push notifications to app users",
+            "Configure and schedule notifications",
+            "Target specific user segments, and track the effectiveness of notifications."
+        ],
+        Analytics_and_Reporting: [
+            "Access to analytics and reporting tools"
+        ],
+        App_Configuration: [
+            "Managing app settings",
+            "Enabling or disabling features",
+            "Customizing the user interface and white label configurations"
+        ],
+        User_Support: [
+            "User feedback",
+            "Guidelines",
+            "Walkthrough"
+        ],
+        Integration_and_API_Management: [
+            "Configure and manage connections to external services, data sources, or third-party tools used by the app"
+        ]
+    },
+    Content_Editor:{
+        All: [
+            "Creating and editing",
+            "Uploading and optimizing images or videos",
+            "Organizing and categorizing content",
+            "Archiving or deleting outdated content",
+            "Publishing",
+            "Translation",
+            "SEO Optimization"
+        ]
+    },
+    Translator:{
+        All: [
+            "View access of original EN content",
+            "Creating and editing for translation content",
+            "Uploading and optimizing images or videos",
+            "Organizing and categorizing content",
+            "Archiving or deleting outdated content",
+            "Publishing",
+            "SEO Optimization"
+        ]
+    },
+    Support:{
+        All: [
+            "User feedback",
+            "Guidelines",
+            "Walkthrough"
+        ]
+    }
+}
+const roles = Object.keys(permissions);
+const permissionsGroups = {}
+roles.forEach(role => {
+    permissionsGroups[role] = Object.keys(permissions[role]);
+});
+
+// Main
 const Roles = ()=>{
+    // inits
     const [currentRole, setCurrentRole] = useState("Administrator");
+
+    // comps
     const Header = ()=>{
         const Title = ()=>{
             return(
@@ -15,13 +104,6 @@ const Roles = ()=>{
         }
         const Roles = ()=>{
             const [showList, setShowList] = useState(false);
-            const roles = [
-                "Super Admin",
-                "Administrator",
-                "Content Editor",
-                "Translator",
-                "Support"
-            ]
             const Holder = ()=>{
                 const handleClick = ()=>{
                     setShowList(true);
@@ -29,7 +111,7 @@ const Roles = ()=>{
                 return(
                     <div className='roles-holder font-20 padding-10 flex-row align-center space-between link' onClick={handleClick}>
                         <div>
-                            {currentRole}
+                            {currentRole.split("_").join(" ")}
                         </div>
                         <img src={dropIcon} height="20"/>
                     </div>
@@ -42,7 +124,7 @@ const Roles = ()=>{
                     }
                     return(
                         <div className='font-20 link' onClick={handleClick}>
-                            {label}
+                            {label.split("_").join(" ")}
                         </div>
                     )
                 }
@@ -70,39 +152,25 @@ const Roles = ()=>{
         )
     }
     const Content = ()=>{
+        const [currentPermGroup, setCurrentPermGroup] = useState(permissionsGroups[currentRole][0]);
         const PermissionsGroups = ()=>{
-            const groups = {
-                Administrator: [
-                    "User Management",
-                    "Content Management",
-                    "Notifications",
-                    "Analytics and Reporting",
-                    "App Configuration",
-                    "User Support",
-                    "Integration and API Management"
-                ]
-            }
             const Group = ({group})=>{
+                const handleClick = ()=>{
+                    setCurrentPermGroup(group);
+                }
                 return(
-                    <div className='permissions-group margin-5 link'>
-                        {group}
+                    <div className={'margin-5 '+((currentPermGroup===group)?"permissions-group-selected":"permissions-group link")} onClick={handleClick}>
+                        {group.split("_").join(" ")}
                     </div>
                 )
             }
             return(
                 <div className='flex-col permissions-groups'>
-                    {groups[currentRole]?groups[currentRole].map((group, index)=><Group group={group} key={index}/>):""}
+                    {permissionsGroups[currentRole].map((group, index)=><Group group={group} key={index}/>)}
                 </div>
             )
         }
         const Permissions = ()=>{
-            const permissions = {
-                Administrator:{
-                    User_Management:[
-
-                    ]
-                }
-            }
             const Title = ()=>{
                 return(
                     <div className='relative flex-row permissions-title padding-10 full-width'>
@@ -118,9 +186,24 @@ const Roles = ()=>{
                     </div>
                 )
             }
+            const PermissionsList = ()=>{
+                const Permission = ({label})=>{
+                    return(
+                        <div>
+                            {label}
+                        </div>
+                    )
+                }
+                return(
+                    <div className='flex-col'>
+                        {currentPermGroup?permissions[currentRole][currentPermGroup].map((permission, index)=><Permission label={permission} key={index}/>):""}
+                    </div>
+                )
+            }
             return(
                 <div className='relative permissions flex-col'>
                     <Title/>
+                    <PermissionsList/>
                 </div>
             )
         }
@@ -132,6 +215,8 @@ const Roles = ()=>{
             </div>
         )
     }
+
+    // render
     return (
         <div className="relative flex-col full-width">
             <Header/>
