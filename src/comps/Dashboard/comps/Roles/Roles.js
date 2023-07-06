@@ -2,86 +2,9 @@
 
 // imports
 import { useState, useEffect } from 'react';
+import data from "./data.json"
 import dropIcon from "assets/images/general/dropIcon.png";
 import "./Roles.css";
-
-// General Init
-const data = {
-    Super_Admin:{
-        All:[
-            "Access and permission to all the system"
-        ]
-    },
-    Administrator:{
-        User_Management: [
-            "Creating and managing user accounts",
-            "Invite users",
-            "Granting user access",
-            "Delete users",
-            "Disable users",
-            "Assigning roles and permissions"
-        ],
-        Content_Management: [
-            "Creating and editing",
-            "Uploading and optimizing images or videos",
-            "Organizing and categorizing content",
-            "Archiving or deleting outdated content",
-            "Publishing",
-            "Translation",
-            "SEO Optimization"
-        ],
-        Notifications: [
-            "Send push notifications to app users",
-            "Configure and schedule notifications",
-            "Target specific user segments, and track the effectiveness of notifications."
-        ],
-        Analytics_and_Reporting: [
-            "Access to analytics and reporting tools"
-        ],
-        App_Configuration: [
-            "Managing app settings",
-            "Enabling or disabling features",
-            "Customizing the user interface and white label configurations"
-        ],
-        User_Support: [
-            "User feedback",
-            "Guidelines",
-            "Walkthrough"
-        ],
-        Integration_and_API_Management: [
-            "Configure and manage connections to external services, data sources, or third-party tools used by the app"
-        ]
-    },
-    Content_Editor:{
-        All: [
-            "Creating and editing",
-            "Uploading and optimizing images or videos",
-            "Organizing and categorizing content",
-            "Archiving or deleting outdated content",
-            "Publishing",
-            "Translation",
-            "SEO Optimization"
-        ]
-    },
-    Translator:{
-        All: [
-            "View access of original EN content",
-            "Creating and editing for translation content",
-            "Uploading and optimizing images or videos",
-            "Organizing and categorizing content",
-            "Archiving or deleting outdated content",
-            "Publishing",
-            "SEO Optimization"
-        ]
-    },
-    Support:{
-        All: [
-            "User feedback",
-            "Guidelines",
-            "Walkthrough"
-        ]
-    }
-}
 
 // Main
 const Roles = ()=>{
@@ -147,7 +70,7 @@ const Roles = ()=>{
         )
     }
     const Content = ()=>{
-        const [currentPermGroup, setCurrentPermGroup] = useState(data[currentRole][0]);
+        const [currentPermGroup, setCurrentPermGroup] = useState(Object.keys(data[currentRole])[0]);
         const PermissionsGroups = ()=>{
             const Group = ({group})=>{
                 const handleClick = ()=>{
