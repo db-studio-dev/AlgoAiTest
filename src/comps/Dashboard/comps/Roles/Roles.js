@@ -1,7 +1,7 @@
 // Roles.js
 
 // imports
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import data from "./data.json"
 import dropIcon from "assets/images/general/dropIcon.png";
 import triIcon from "assets/images/general/triangle.png";

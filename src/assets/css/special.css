@@ -4,6 +4,9 @@
 .link-ul:hover{
     text-decoration: underline;
 }
+.default-cursor{
+    cursor: default;
+}
 .grow:hover{
     transform: scale(1.1,1.1);
 }

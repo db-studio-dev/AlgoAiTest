@@ -1,9 +1,14 @@
 // Header.js
 import { useState } from 'react';
+import { useNavigate, useLocation } from "react-router-dom";
 import smileImg from "assets/images/header/smile.png";
 import "./Header.css";
 
 const Header = ()=>{
+    // inits
+    const navigate = useNavigate();
+    const location = useLocation();
+
     // comps
     const Title = ()=>{
         return(
@@ -12,6 +17,7 @@ const Header = ()=>{
             </div>
         )
     }
+
     const ProfilePic = ()=>{
         // inits
         const [showMenu, setShowMenu] = useState(false);
@@ -26,8 +32,11 @@ const Header = ()=>{
                 "Stuff"
             ]
             const Item = ({label})=>{
+                const handleClick = ()=>{
+                    navigate(label);
+                }
                 return(
-                    <div className="font-20 margin-5 link profile-menu-item text-white padding-10 b-r-20">
+                    <div className={(location.pathname.includes(label)?"profile-menu-item-selected default-cursor":"link")+" font-20 margin-5 profile-menu-item text-white padding-10 b-r-20"} onClick={handleClick}>
                         {label}
                     </div>
                 )
