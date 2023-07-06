@@ -1,0 +1,124 @@
+.link{
+    cursor: pointer;
+}
+.link-ul:hover{
+    text-decoration: underline;
+}
+.grow:hover{
+    transform: scale(1.1,1.1);
+}
+.grow:active{
+    transform: scale(1,1);
+}
+
+.grow-small:hover{
+    transform: scale(1.02,1.02);
+}
+.grow-small:active{
+    transform: scale(1,1);
+}
+
+.ul{
+    text-decoration: underline;
+}
+.grey-bg{
+    background-color: grey;
+}
+.bg-light-grey{
+    background-color: #F7FAFC;
+}
+.white-bg{
+    background-color: white;
+}
+.black-bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: black;
+    opacity: 0.8;
+}
+.blue-bg{
+    background-color: var(--blue);
+}
+.bg-creme {
+    background-color: var(--creme);
+}
+.bg-dark-blue{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: var(--dark-blue);
+    opacity: 0.9;
+}
+.bg-dark-blue-2{
+    background-color: var(--dark-blue);
+}
+.bg-red{
+    background-color: var(--red);
+}
+
+.shadow{
+    -webkit-filter: drop-shadow(3px 3px 2px rgba(45,73,105, 0.5));
+    filter: drop-shadow(3px 3px 2px rgba(45,73,105, 0.5));
+}
+
+.yellow-button{
+    background-image: linear-gradient(#ffcd2f, #ffbb16);
+}
+.yellow-button:hover:enabled{
+    background-image: linear-gradient(#eebf25, #eaa400);
+    transform: scale(1.05,1.05);
+    cursor: pointer;
+}
+.yellow-button:disabled,.yellow-button[disabled]{
+    background-image: linear-gradient(#cccccc, #b3b3b3);
+}
+.red-button{
+    background-image: linear-gradient(#fd5050, #ea4343);
+}
+.red-button:hover:enabled{
+    background-image: linear-gradient(#e84242, #be2929);
+    cursor: pointer;
+}
+.red-button:disabled,.red-button[disabled]{
+    background-image: linear-gradient(#cccccc, #b3b3b3);
+}
+.red-button:active:enabled{
+    background-image: linear-gradient(#fd5050, #ea4343);
+}
+.hidden{
+    display: none;
+}
+.defaultCursor{
+    cursor: default;
+}
+.green-border{
+    border-style: solid;
+    border-width: 5px;
+    border-color: #41AD49;
+}
+.white-border{
+    border-style: solid;
+    border-width: 5px;
+    border-color: #fffcdf;
+}
+
+.non-select{
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.non-interact{
+    pointer-events: none;
+}
+
+.non-drag{
+    user-drag: none;
+    -webkit-user-drag: none;
+}

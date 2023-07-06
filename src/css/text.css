@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Varela+Round&display=swap');
+
+.text-center{
+    text-align: center;
+}
+
+.title-font{
+    font-family: 'Abril Fatface', cursive;
+}
+
+.text-white{
+    color: white;
+}
+
+.text-red{
+    color:red;
+}
+
+.text-dark-blue{
+    color: var(--dark-blue);
+}
+
+.font-10{
+    font-size: 10px;
+}
+.font-15{
+    font-size: 15px;
+}
+.font-20{
+    font-size: 20px;
+}
+.font-25{
+    font-size: 25px;
+}
+.font-30{
+    font-size: 30px;
+}
+.font-40{
+    font-size: 40px;
+}
+.font-50{
+    font-size: 50px;
+}
+.font-60{
+    font-size: 60px;
+}

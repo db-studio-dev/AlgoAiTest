@@ -1,0 +1,24 @@
+.Header{
+    width: 100vw;
+    height: 100px;
+    background-color: #ffffff;
+    padding: 20px;
+}
+.Header-container{
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.profile-menu{
+    background-color: #38394e;
+}
+.profile-menu-item:hover{
+    background-color: #ffffff;
+    color: #252631
+}
+.profile-menu-item:active{
+    background-color: #252631;
+    color: #fff1cc
+}

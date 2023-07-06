@@ -1,0 +1,92 @@
+:root{
+    --blur-amount:20px;
+    --blur-amount-big:50px;
+    --yellow: #ffd015;
+    --yellow-dark: #ffbb17;
+    --blue: #339dff;
+    --dark-blue: #004975;
+    --light-blue: #BEE8EA;
+    --green: #4CAF50;
+    --dark-green: #3c9d40;
+    --red: #FE5973;
+    --creme: #FFFBEE;
+}
+*{
+    outline: none;
+    font-family: 'Varela Round', sans-serif;
+    box-sizing: border-box;
+    margin: 0px;
+}
+body{
+    min-height: 100vh;
+    background-color: #004975;
+}
+a{
+    text-decoration: none;
+}
+input[type=range][orient=vertical]
+{
+    writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* WebKit */
+    width: 8px;
+    height: 175px;
+    padding: 0 5px;
+}
+input[type=text],[type=password],input[type=email],input[type=date],input[type=number]{
+    border: 0px;
+    border-radius: 20px;
+    padding: 10px;
+}
+input[type=text]:disabled,input[type=email]:disabled,input[type=date]:disabled{
+    background-color: grey;
+}
+textarea{
+    border: 0px;
+    border-radius: 20px;
+    padding: 10px;
+    resize: none;
+}
+::placeholder{
+    color: grey;
+    opacity: 1;
+}
+select{
+    -webkit-appearance: none;
+    cursor: pointer;
+    border: 0px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    background-color: white;
+}
+button{
+    background-image: linear-gradient(#58bb5c, #359238);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 50px;
+    white-space:nowrap;
+}
+button:hover:enabled{
+    background-image: linear-gradient(#4dac50, #2b832e);
+    cursor: pointer;
+}
+button:active:enabled{
+    background-image: linear-gradient(#58bb5c, #359238);
+}
+button:disabled,button[disabled]{
+    background-image: linear-gradient(#cccccc, #b3b3b3);
+}
+h6{
+    font-size: 20px;
+    margin: 0px;
+}
+ol{
+    margin:0px;
+}
+ul{
+    margin:0px;
+}
