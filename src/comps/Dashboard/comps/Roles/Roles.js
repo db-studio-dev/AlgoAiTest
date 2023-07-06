@@ -6,7 +6,7 @@ import dropIcon from "assets/images/general/dropIcon.png";
 import "./Roles.css";
 
 // General Init
-const permissions = {
+const data = {
     Super_Admin:{
         All:[
             "Access and permission to all the system"
@@ -82,11 +82,6 @@ const permissions = {
         ]
     }
 }
-const roles = Object.keys(permissions);
-const permissionsGroups = {}
-roles.forEach(role => {
-    permissionsGroups[role] = Object.keys(permissions[role]);
-});
 
 // Main
 const Roles = ()=>{
@@ -133,7 +128,7 @@ const Roles = ()=>{
                         top: "0px",
                         left: "0px"
                     }}>
-                        {roles.map((role, index)=><Item label={role} key={index}/>)}
+                        {Object.keys(data).map((role, index)=><Item label={role} key={index}/>)}
                     </div>
                 )
             }
@@ -152,7 +147,7 @@ const Roles = ()=>{
         )
     }
     const Content = ()=>{
-        const [currentPermGroup, setCurrentPermGroup] = useState(permissionsGroups[currentRole][0]);
+        const [currentPermGroup, setCurrentPermGroup] = useState(data[currentRole][0]);
         const PermissionsGroups = ()=>{
             const Group = ({group})=>{
                 const handleClick = ()=>{
@@ -166,7 +161,7 @@ const Roles = ()=>{
             }
             return(
                 <div className='flex-col permissions-groups'>
-                    {permissionsGroups[currentRole].map((group, index)=><Group group={group} key={index}/>)}
+                    {Object.keys(data[currentRole]).map((group, index)=><Group group={group} key={index}/>)}
                 </div>
             )
         }
@@ -189,14 +184,17 @@ const Roles = ()=>{
             const PermissionsList = ()=>{
                 const Permission = ({label})=>{
                     return(
-                        <div>
-                            {label}
+                        <div className='flex-row space-between padding-10' style={{border:"solid 1px grey"}}>
+                            <div className='font-15'>
+                                {label}
+                            </div>
+                            
                         </div>
                     )
                 }
                 return(
                     <div className='flex-col'>
-                        {currentPermGroup?permissions[currentRole][currentPermGroup].map((permission, index)=><Permission label={permission} key={index}/>):""}
+                        {currentPermGroup?data[currentRole][currentPermGroup].map((permission, index)=><Permission label={permission} key={index}/>):""}
                     </div>
                 )
             }
