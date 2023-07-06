@@ -1,5 +1,5 @@
 // Header.js
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import smileImg from "assets/images/header/smile.png";
 import "./Header.css";
 
