@@ -2,6 +2,7 @@
 
 // imports
 import { useState } from 'react';
+import Slider from "comps/Slider/Slider";
 import data from "./data.json"
 import dropIcon from "assets/images/general/dropIcon.png";
 import triIcon from "assets/images/general/triangle.png";
@@ -108,40 +109,21 @@ const Roles = ()=>{
             }
             const PermissionsList = ()=>{
                 const Permission = ({label})=>{
-                    const [showDescription, setShowDescription] = useState(false);
-                    const Arrow = ()=>{
+                    const [showDescription, setShowDescription] = useState(false);              
+                    const Label = ()=>{
                         const handleClick = ()=>{
                             setShowDescription(!showDescription);
                         }
-                        return <img src={triIcon} className={"link "+(showDescription?"rotate":"")} height="10px" onClick={handleClick}/>
-                    }
-                    const Slider = ()=>{
-                        const [on, setOn] = useState(false);
-                        const handleClick = ()=>{
-                            setOn(!on)
+                        const Arrow = ()=>{
+                            return <img src={triIcon} className={"link "+(showDescription?"rotate":"")} height="10px" />
                         }
                         return(
-                            <div className='relative slider flex-col-center link' onClick={handleClick} style={{
-                                backgroundColor: on?"green":"grey"
-                            }}>
-                                <div className='slider-ball' style={{
-                                    left:on?"auto":"8px",
-                                    right:on?"8px":"auto",
-                                }}/>
-                            </div>
-                        )
-                    }
-                    const Row = ()=>{
-                        return(
-                            <div className='flex-row align-center space-between'>
-                                <div className='flex-row align-center'>
-                                    <Arrow/>
-                                    <div className='margin-5'/>
-                                    <div className='font-15'>
-                                        {label}
-                                    </div>
+                            <div className='flex-row align-center link' onClick={handleClick}>
+                                <Arrow/>
+                                <div className='margin-5'/>
+                                <div className='font-15'>
+                                    {label}
                                 </div>
-                                <Slider/>
                             </div>
                         )
                     }
@@ -158,7 +140,10 @@ const Roles = ()=>{
                     }
                     return(
                         <div className='flex-col permission padding-10'>
-                            <Row/>
+                            <div className='flex-row align-center space-between'>
+                                <Label/>
+                                <Slider/>
+                            </div>
                             {showDescription?<Description/>:""}
                         </div>
                     )

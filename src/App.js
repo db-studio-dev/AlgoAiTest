@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes, Navigate, useNavigate } from 'react-router-dom';
-import Header from "routes/Header/Header";
+import Header from "comps/Header/Header";
 import Dashboard from "routes/Dashboard/Dashboard";
 import Profile from "routes/Profile/Profile";
 import Billing from "routes/Billing/Billing";
