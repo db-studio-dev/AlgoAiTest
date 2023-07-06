@@ -36,7 +36,7 @@ const Header = ()=>{
                     navigate(label);
                 }
                 return(
-                    <div className={(location.pathname.includes(label)?"profile-menu-item-selected default-cursor":"link")+" font-20 margin-5 profile-menu-item text-white padding-10 b-r-20"} onClick={handleClick}>
+                    <div className={(location.pathname.includes(label)?"profile-menu-item-selected default-cursor":"profile-menu-item link")+" font-20 margin-5 profile-menu-item padding-10 b-r-20"} onClick={handleClick}>
                         {label}
                     </div>
                 )

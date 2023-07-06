@@ -14,13 +14,12 @@
 .profile-menu{
     background-color: #38394e;
 }
+.profile-menu-item{
+    color: white;
+}
 .profile-menu-item:hover{
     background-color: #ffffff;
     color: #252631;
-}
-.profile-menu-item:active{
-    background-color: #252631;
-    color: #fff1cc
 }
 .profile-menu-item-selected{
     background-color: #ffffff;
