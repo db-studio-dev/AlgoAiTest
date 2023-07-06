@@ -25,9 +25,9 @@ const Dashboard = ()=>{
                 <div className="flex-col">
                     {items.map((item, index)=><Item label={item} key={index}/>)}
                 </div>
-                <div className="flex-col-center">
-                    <div className="text-white font-10 margin-10">
-                        Something
+                <div className="flex-col full-width margin-10">
+                    <div className="text-white font-10">
+                        : )
                     </div>
                 </div>
             </div>

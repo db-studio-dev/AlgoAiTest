@@ -4,6 +4,7 @@
 import { useState, useEffect } from 'react';
 import data from "./data.json"
 import dropIcon from "assets/images/general/dropIcon.png";
+import triIcon from "assets/images/general/triangle.png";
 import "./Roles.css";
 
 // Main
@@ -93,8 +94,8 @@ const Roles = ()=>{
             const Title = ()=>{
                 return(
                     <div className='relative flex-row permissions-title padding-10 full-width'>
-                        <div className='flex-col-center text-white font-20' style={{width:"80%"}}>
-                            Action
+                        <div className='flex-col text-white font-20' style={{width:"80%"}}>
+                            Actions - {currentPermGroup.split("_").join(" ")}
                         </div>
                         <div className='text-white font-20'>
                             |
@@ -107,6 +108,13 @@ const Roles = ()=>{
             }
             const PermissionsList = ()=>{
                 const Permission = ({label})=>{
+                    const [showDescription, setShowDescription] = useState(false);
+                    const Arrow = ()=>{
+                        const handleClick = ()=>{
+                            setShowDescription(!showDescription);
+                        }
+                        return <img src={triIcon} className={"link "+(showDescription?"rotate":"")} height="10px" onClick={handleClick}/>
+                    }
                     const Slider = ()=>{
                         const [on, setOn] = useState(false);
                         const handleClick = ()=>{
@@ -123,12 +131,35 @@ const Roles = ()=>{
                             </div>
                         )
                     }
-                    return(
-                        <div className='flex-row permission align-center space-between padding-10' style={{border:"solid 1px grey"}}>
-                            <div className='font-15'>
-                                {label}
+                    const Row = ()=>{
+                        return(
+                            <div className='flex-row align-center space-between'>
+                                <div className='flex-row align-center'>
+                                    <Arrow/>
+                                    <div className='margin-5'/>
+                                    <div className='font-15'>
+                                        {label}
+                                    </div>
+                                </div>
+                                <Slider/>
                             </div>
-                            <Slider/>
+                        )
+                    }
+                    const Description = ()=>{
+                        return(
+                            <div className='flex-col margin-10'>
+                                <hr/>
+                                <p>
+                                    Lorem ipsum odor amet, consectetuer adipiscing elit. Ante inceptos est suscipit ultricies consequat dignissim platea. Cursus dapibus lacus facilisi quis, eros curae libero phasellus. Nam ullamcorper tellus curae facilisi lacus. Eros porttitor eros hac magnis fringilla mi condimentum. Donec hac hac quam sociosqu penatibus litora. Libero dui potenti per penatibus senectus. Nam nec senectus taciti nisi sollicitudin.
+                                </p>
+                            </div>
+                            
+                        )
+                    }
+                    return(
+                        <div className='flex-col permission padding-10'>
+                            <Row/>
+                            {showDescription?<Description/>:""}
                         </div>
                     )
                 }

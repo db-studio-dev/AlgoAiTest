@@ -48,6 +48,7 @@
 }
 .permission{
     background-color: white;
+    border: solid 1px grey;
 }
 .permissions-title{
     background-color: #29283a;
@@ -65,4 +66,7 @@
     border-radius: 20px;
     border: solid 1px grey;
     background-color: white;
+}
+.rotate{
+    transform: rotate(90deg);
 }
