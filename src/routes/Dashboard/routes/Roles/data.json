@@ -1,7 +1,24 @@
 {
     "Super_Admin":{
-        "All":[
-            "Access and permission to all the system"
+        "Group_01":[
+            "Access and permission to all the system",
+            "Creating and managing user accounts",
+            "Invite users",
+            "Granting user access",
+            "Delete users"
+        ],
+        "Group_02":[
+            "Creating and editing",
+            "Uploading and optimizing images or videos",
+            "Organizing and categorizing content",
+            "Archiving or deleting outdated content",
+            "Publishing",
+            "Translation"
+        ],
+        "Group_03":[
+            "Managing app settings",
+            "Enabling or disabling features",
+            "Customizing the user interface and white label configurations"
         ]
     },
     "Administrator":{
@@ -45,32 +62,69 @@
         ]
     },
     "Content_Editor":{
-        "All": [
+        "Content_Group_01":[
+            "Access and permission to all the system",
+            "Creating and managing user accounts",
+            "Invite users",
+            "Granting user access",
+            "Delete users"
+        ],
+        "Content_Group_02":[
             "Creating and editing",
             "Uploading and optimizing images or videos",
             "Organizing and categorizing content",
             "Archiving or deleting outdated content",
             "Publishing",
-            "Translation",
-            "SEO Optimization"
+            "Translation"
+        ],
+        "Content_Group_03":[
+            "Managing app settings",
+            "Enabling or disabling features",
+            "Customizing the user interface and white label configurations"
         ]
     },
     "Translator":{
-        "All": [
-            "View access of original EN content",
-            "Creating and editing for translation content",
+        "Translator_Group_01":[
+            "Access and permission to all the system",
+            "Creating and managing user accounts",
+            "Invite users",
+            "Granting user access",
+            "Delete users"
+        ],
+        "Translator_Group_02":[
+            "Creating and editing",
             "Uploading and optimizing images or videos",
             "Organizing and categorizing content",
             "Archiving or deleting outdated content",
             "Publishing",
-            "SEO Optimization"
+            "Translation"
+        ],
+        "Translator_Group_03":[
+            "Managing app settings",
+            "Enabling or disabling features",
+            "Customizing the user interface and white label configurations"
         ]
     },
     "Support":{
-        "All": [
-            "User feedback",
-            "Guidelines",
-            "Walkthrough"
+        "Support_Group_01":[
+            "Creating and editing",
+            "Uploading and optimizing images or videos",
+            "Organizing and categorizing content",
+            "Archiving or deleting outdated content",
+            "Publishing",
+            "Translation"
+        ],
+        "Support_Group_02":[
+            "Access and permission to all the system",
+            "Creating and managing user accounts",
+            "Invite users",
+            "Granting user access",
+            "Delete users"
+        ],
+        "Support_Group_03":[
+            "Managing app settings",
+            "Enabling or disabling features",
+            "Customizing the user interface and white label configurations"
         ]
     }
 }

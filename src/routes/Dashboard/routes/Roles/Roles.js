@@ -9,7 +9,7 @@ import "./Roles.css";
 // Main
 const Roles = ()=>{
     // inits
-    const [currentRole, setCurrentRole] = useState("Administrator");
+    const [currentRole, setCurrentRole] = useState(Object.keys(data)[0]);
 
     // comps
     const Header = ()=>{
