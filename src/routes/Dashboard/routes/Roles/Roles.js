@@ -1,6 +1,4 @@
 // Roles.js
-
-// imports
 import { useState } from 'react';
 import Slider from "comps/Slider/Slider";
 import data from "./data.json"

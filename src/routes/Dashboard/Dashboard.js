@@ -18,6 +18,7 @@ const routes = {
     Reports: <Reports/>,
 }
 
+// main
 const Dashboard = ()=>{
     //inits
     const [route, setRoute] = useState(Object.keys(routes)[0])
@@ -65,6 +66,7 @@ const Dashboard = ()=>{
         </div>
     )
 }
+
 export default Dashboard;
 
 // end
