@@ -1,9 +1,9 @@
 .Dashboard{
-    width: 100vw
+    width: 100vw;
+    min-height: calc(100vh - 100px);
 }
 .side-menu{
     width: 200px;
-    height: calc(100vh - 100px);
     background-color: #29273b;
 }
 .side-menu-item{
@@ -17,7 +17,6 @@
 }
 .dashboard-content{
     background-color: rgb(201, 207, 215);
-    height: calc(100vh - 100px);
     width: calc(100vw - 200px);
 }
 .dashboard-content-container{

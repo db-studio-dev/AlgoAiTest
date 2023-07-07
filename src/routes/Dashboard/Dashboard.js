@@ -59,7 +59,7 @@ const Dashboard = ()=>{
 
     // render
     return (
-        <div className="Dashboard flex-row">
+        <div className="relative Dashboard flex-row">
             <SideMenu/>
             <Content/>
         </div>
